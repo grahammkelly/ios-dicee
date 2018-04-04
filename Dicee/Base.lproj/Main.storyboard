@@ -56,7 +56,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="DiceImageView1" destination="J0I-oJ-KBW" id="5Xr-Hx-Z17"/>
                         <outlet property="diceImageView1" destination="J0I-oJ-KBW" id="3AA-r4-50V"/>
                         <outlet property="diceImageView2" destination="zWL-gw-HSI" id="LKA-bd-vwE"/>
                     </connections>
