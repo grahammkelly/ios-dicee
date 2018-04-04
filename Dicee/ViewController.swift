@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var randomDiceIdx1: Int = 0
+    var randomDiceIdx2: Int = 0
+
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
 
@@ -25,6 +28,10 @@ class ViewController: UIViewController {
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
 
+        randomDiceIdx1 = Int(arc4random_uniform(6))
+        randomDiceIdx2 = Int(arc4random_uniform(6))
+
+        print(randomDiceIdx1, " / ", randomDiceIdx2)
     }
 
 }
