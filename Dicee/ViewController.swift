@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateDiceFaces()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,17 +29,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
+        updateDiceFaces()
+    }
 
-        randomDiceIdx1 = randomDie()
-        randomDiceIdx2 = randomDie()
+    func updateDiceFaces() {
+        updateDiceFaces(randomDie(), randomDie())
+    }
 
-        print(randomDiceIdx1, " / ", randomDiceIdx2)
-
-        setImg(diceImageView1, randomDiceIdx1)
-        setImg(diceImageView2, randomDiceIdx2)
+    func updateDiceFaces(_ face1: Int, _ face2: Int) {
+        setImg(diceImageView1, face1)
+        setImg(diceImageView2, face2)
     }
 
     func setImg(_ imgView: UIImageView, _ diceTop: Int) {
+        print("Setting dice '\(imgView.accessibilityIdentifier ?? "Unknown dice")' to 'dice\(diceTop)'")
 //        imgView.image = UIImage(named: diceArray[diceTop-1])
         imgView.image = UIImage(named: "dice\(diceTop)")
     }
